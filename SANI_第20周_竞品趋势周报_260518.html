@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SANI撒尼 · 竞品趋势周报 · 2026年第20周</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700;900&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6F5F1;
+  --bg2:#EFEFEA;
+  --surface:#FFFFFF;
+  --surface2:#F9F8F5;
+  --olive:#5C6148;
+  --olive-light:#EEF0E8;
+  --olive-border:rgba(92,97,72,0.22);
+  --terra:#8B5E3C;
+  --terra-light:#F4EDE6;
+  --terra-border:rgba(139,94,60,0.22);
+  --sage:#3A5A42;
+  --sage-light:#EAF0EA;
+  --sage-border:rgba(58,90,66,0.2);
+  --blue:#3A607A;
+  --blue-light:#E6EFF5;
+  --purple:#5A4A78;
+  --purple-light:#EEEAF5;
+  --text:#1A1A18;
+  --text2:#5A5A54;
+  --text3:#9A9A90;
+  --border:rgba(26,26,24,0.1);
+  --border-light:rgba(26,26,24,0.06);
+  --gold:#5C6148;
+  --gold-dim:rgba(92,97,72,0.5);
+  --gold-bg:rgba(92,97,72,0.06);
+  --gold-border:rgba(92,97,72,0.2);
+  --red:#8B4A2A;
+  --green:#3A5A42;
+  --sans:'Noto Sans SC',sans-serif;
+  --display:'Playfair Display',serif
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.7;font-size:14px}
+a{color:var(--olive);text-decoration:none;border-bottom:1px solid var(--olive-border);transition:all .2s}
+a:hover{border-bottom-color:var(--olive);opacity:.75}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+.date-tag{display:inline-block;background:var(--olive-light);color:var(--olive);font-size:11px;padding:2px 8px;border-radius:3px;font-weight:600;letter-spacing:.5px;vertical-align:middle}
+.date-tag.recent{background:var(--terra-light);color:var(--terra)}
+.badge{display:inline-block;padding:2px 8px;border-radius:3px;font-size:11px;font-weight:600;letter-spacing:.3px}
+.badge-red{background:var(--terra-light);color:var(--terra)}
+.badge-blue{background:var(--blue-light);color:var(--blue)}
+.badge-green{background:var(--sage-light);color:var(--sage)}
+.badge-purple{background:var(--purple-light);color:var(--purple)}
+.badge-gold{background:var(--olive-light);color:var(--olive)}
+.card{background:var(--surface);border:0.5px solid var(--border);border-radius:6px;padding:20px 24px;margin-bottom:12px;transition:transform .2s}
+.card:hover{transform:translateY(-1px)}
+.card-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.brand-icon{width:42px;height:42px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:10px;letter-spacing:.5px;flex-shrink:0;text-align:center;line-height:1.3}
+.source{display:inline-flex;align-items:center;gap:4px;font-size:11px;color:var(--text3);margin-top:10px;border-bottom:none}
+.source:hover{color:var(--olive)}
+.source::before{content:'🔗';font-size:10px}
+.sources-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;padding-top:10px;border-top:0.5px solid var(--border-light)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+@media(max-width:900px){.grid2,.grid3{grid-template-columns:1fr}}
+.detail-line{font-size:13px;color:var(--text2);line-height:1.85;margin-bottom:4px}
+.detail-line b{color:var(--text);font-weight:600}
+.section-title{font-size:22px;font-weight:700;margin:36px 0 18px;padding-left:14px;border-left:3px solid var(--olive);line-height:1.3;color:var(--text)}
+.divider{height:0.5px;background:var(--border);margin:28px 0}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+table th{background:var(--olive-light);color:var(--olive);font-weight:600;padding:10px 12px;text-align:left;border-bottom:2px solid var(--olive-border)}
+table td{padding:10px 12px;border-bottom:0.5px solid var(--border-light);color:var(--text2)}
+table tr:hover td{background:var(--bg2)}
+table td:first-child{color:var(--text);font-weight:600}
+.insight-num{font-family:var(--display);font-size:36px;font-weight:700;color:rgba(92,97,72,0.08);position:absolute;top:12px;right:16px;line-height:1}
+.tab-bar{display:flex;gap:0;border-bottom:0.5px solid var(--border);margin-bottom:24px;overflow-x:auto}
+.tab-btn{padding:12px 20px;font-size:13px;font-weight:500;color:var(--text3);background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;white-space:nowrap;font-family:var(--sans);transition:all .2s}
+.tab-btn:hover{color:var(--text2)}
+.tab-btn.active{color:var(--olive);border-bottom-color:var(--olive);font-weight:600}
+.tab-content{display:none;animation:fadeUp .35s ease}
+.tab-content.active{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.key-finding{background:var(--olive-light);border:0.5px solid var(--olive-border);border-left:3px solid var(--olive);border-radius:0 6px 6px 0;padding:20px 24px;margin-bottom:24px}
+.footer-note{font-size:11px;color:var(--text3);text-align:center;padding:24px 0 36px;letter-spacing:.5px}
+.buzz-pill{display:inline-flex;align-items:center;gap:5px;background:var(--surface2);border:0.5px solid var(--border);border-radius:4px;padding:4px 10px;font-size:11.5px;color:var(--text2);margin:4px 4px 0 0}
+.buzz-pill strong{color:var(--text);font-weight:600}
+.mkt-bar{background:var(--sage-light);border:0.5px solid var(--sage-border);border-radius:4px;padding:8px 12px;margin-top:8px;font-size:12.5px;color:var(--text2)}
+.mkt-bar b{color:var(--sage)}
+.brand-tier-strip{display:flex;flex-wrap:wrap;gap:6px;padding:14px 0 18px;border-bottom:0.5px solid var(--border-light);margin-bottom:20px}
+.tier-group{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.tier-label{font-size:10.5px;color:var(--text3);font-weight:600;letter-spacing:.5px;white-space:nowrap}
+.tier-sep{width:1px;height:14px;background:var(--border);flex-shrink:0;align-self:center}
+.brand-chip{font-size:11px;padding:2px 7px;border-radius:3px;font-weight:500;white-space:nowrap}
+.chip-int{background:var(--purple-light);color:var(--purple)}
+.chip-dom1{background:var(--terra-light);color:var(--terra)}
+.chip-dom2{background:var(--blue-light);color:var(--blue)}
+.chip-online{background:var(--sage-light);color:var(--sage)}
+.product-card{background:var(--surface);border:0.5px solid var(--border);border-radius:6px;padding:16px 18px}
+.product-card h4{font-size:12.5px;font-weight:700;color:var(--text);margin-bottom:8px;padding-bottom:6px;border-bottom:0.5px solid var(--border-light)}
+.product-item{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px;font-size:12px}
+.product-name{color:var(--text2);flex:1}
+.product-price{color:var(--olive);font-weight:600;white-space:nowrap;margin-left:12px;font-size:11.5px}
+.section-header{font-size:11px;letter-spacing:2px;color:var(--text3);font-weight:600;text-transform:uppercase;margin:22px 0 12px;padding-left:10px;border-left:2px solid var(--olive-border)}
+.filter-btn{display:inline-flex;align-items:center;gap:6px;padding:7px 16px;border-radius:20px;border:0.5px solid var(--border);background:var(--surface);color:var(--text3);font-size:12.5px;font-weight:500;cursor:pointer;font-family:var(--sans);transition:all .2s;white-space:nowrap}
+.filter-btn:hover{border-color:var(--olive-border);color:var(--text2)}
+.filter-btn.active{background:var(--olive-light);border-color:var(--olive-border);color:var(--olive);font-weight:600}
+.filter-count{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:var(--bg2);font-size:10px;font-weight:700;color:var(--text3)}
+.filter-btn.active .filter-count{background:rgba(92,97,72,0.15);color:var(--olive)}
+.tier-divider{font-size:11px;letter-spacing:2px;color:var(--text2);font-weight:600;text-transform:uppercase;margin:22px 0 12px;padding:8px 12px;border-left:2px solid var(--olive);background:var(--olive-light);border-radius:0 4px 4px 0}
+.tier-divider span{font-weight:400;color:var(--text3);font-size:10.5px;letter-spacing:.5px}
+.brand-card{transition:transform .2s,opacity .25s}
+.brand-card.hidden{display:none}
+.img-card{background:var(--surface);border:0.5px solid var(--border);border-radius:6px;overflow:hidden;display:flex;flex-direction:column}
+.img-card .ic-img{width:100%;aspect-ratio:2/3;object-fit:cover;object-position:top;background:var(--bg2);display:block}
+.img-card .ic-ph{width:100%;aspect-ratio:2/3;background:var(--bg2);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px}
+.img-card .ic-ph-letter{font-size:22px;font-weight:700;color:var(--text3)}
+.img-card .ic-ph-name{font-size:10px;color:var(--text3);letter-spacing:1px}
+.img-card .ic-body{padding:12px 14px 14px;flex:1}
+.img-card .ic-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px;padding-bottom:6px;border-bottom:0.5px solid var(--border-light)}
+.img-card .ic-brand{font-size:12.5px;font-weight:700;color:var(--text)}
+.img-card .ic-price{font-size:11px;color:var(--text3);font-weight:400}
+.img-card .ic-item{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px;font-size:11.5px}
+.img-card .ic-item-name{color:var(--text2);flex:1}
+.img-card .ic-item-price{color:var(--olive);font-weight:600;white-space:nowrap;margin-left:8px;font-size:11px}
+.img-card .ic-note{font-size:10.5px;color:var(--text3);margin-top:8px;padding-top:6px;border-top:0.5px solid var(--border-light);line-height:1.5}
+.img-card .ic-note.highlight{color:var(--olive);font-weight:600}
+.img-card .ic-note.alert{color:var(--terra);font-weight:600}
+.grid2-img{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid3-img{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+@media(max-width:900px){.grid2-img,.grid3-img{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.grid2-img,.grid3-img{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<div style="background:var(--bg);border-bottom:0.5px solid var(--border-light);padding-top:44px;padding-bottom:18px">
+<div class="wrap">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:16px">
+    <div>
+      <div style="font-size:11px;letter-spacing:4px;color:var(--text3);text-transform:uppercase;margin-bottom:10px">SANI General Office · Competitive Intelligence</div>
+      <h1 style="font-size:34px;font-weight:900;letter-spacing:1px;line-height:1.25;margin-bottom:6px;color:var(--text)">竞品趋势<span style="color:var(--olive)">周报</span></h1>
+      <p style="font-size:13px;color:var(--text3)">2026年5月12日 — 5月18日 &nbsp;·&nbsp; 第20周 &nbsp;·&nbsp; <span style="color:var(--olive);font-weight:600">总经办出品（Kimi）</span></p>
+    </div>
+    <div style="text-align:right;font-size:12px;color:var(--text3);line-height:2.1">
+      <div>监测品牌 <span style="color:var(--text2)">19个</span><span style="color:var(--text3);margin-left:4px;font-size:11px">（女装专项）</span></div>
+      <div>信息源 <span style="color:var(--text2)">ELLE / Vogue / Harper's Bazaar / Jing Daily / 华丽志 / SocialBeta</span></div>
+      <div>报告日期 <span style="color:var(--text2)">2026.05.18</span></div>
+    </div>
+  </div>
+
+  <!-- 品牌监测索引条 -->
+  <div class="brand-tier-strip" style="margin-top:20px">
+    <div class="tier-group">
+      <span class="tier-label">国外灵感</span>
+      <span class="brand-chip chip-int">Loewe</span>
+      <span class="brand-chip chip-int">Louis Vuitton</span>
+      <span class="brand-chip chip-int">Max Mara</span>
+      <span class="brand-chip chip-int">Lemaire</span>
+      <span class="brand-chip chip-int">Soeur</span>
+      <span class="brand-chip chip-int">Enfold</span>
+      <span class="brand-chip chip-int">UN3D.</span>
+    </div>
+    <div class="tier-sep"></div>
+    <div class="tier-group">
+      <span class="tier-label">国内一线</span>
+      <span class="brand-chip chip-dom1">JNBY</span>
+      <span class="brand-chip chip-dom1">AUM</span>
+      <span class="brand-chip chip-dom1">Edition</span>
+      <span class="brand-chip chip-dom1">Joc</span>
+      <span class="brand-chip chip-dom1">MO&amp;Co.</span>
+      <span class="brand-chip chip-dom1">INSUN</span>
+      <span class="brand-chip chip-dom1">Marisfrolg</span>
+    </div>
+    <div class="tier-sep"></div>
+    <div class="tier-group">
+      <span class="tier-label">国内二线</span>
+      <span class="brand-chip chip-dom2">broadcast播</span>
+      <span class="brand-chip chip-dom2">达衣岩</span>
+      <span class="brand-chip chip-dom2">水云间</span>
+    </div>
+    <div class="tier-sep"></div>
+    <div class="tier-group">
+      <span class="tier-label">线上品牌</span>
+      <span class="brand-chip chip-online">开间</span>
+      <span class="brand-chip chip-online">知之</span>
+    </div>
+  </div>
+
+  <div style="height:0.5px;background:var(--border)"></div>
+</div>
+</div>
+
+<div class="wrap">
+
+<!-- ═══════════ 核心发现 ═══════════ -->
+<div class="key-finding">
+  <div style="font-size:11px;letter-spacing:2px;color:var(--olive);font-weight:600;margin-bottom:10px">★ 本周核心发现</div>
+  <div style="font-size:14px;line-height:1.9;color:var(--text2)">
+    <b style="color:var(--olive)">Loewe</b> 5月12日在新加坡国家美术馆颁出2026年度Foundation工艺奖，韩国陶瓷艺术家Jongjin Park凭作品《Strata of Illusion》摘得大奖，中国艺术家南维作品《Knot-Loving》获特别提名，30件入围展览持续至6月14日；5月14日，<b style="color:var(--olive)">Loewe × On Running</b> SS26联名9款配色正式开售；<b style="color:var(--olive)">JNBY江南布衣</b> 以「游牧新章·散步时刻」快闪落地沈阳，邀请演员李心洁演绎2026春夏「凝视」系列，城市游牧策略从成都向东北市场延伸；<b style="color:var(--olive)">broadcast播</b> 代言人倪妮主演剧集《隐身的名字》持续热播，品牌借势输出"风辞典"场景穿搭联动内容，代言人媒体价值出现二次发酵。<b style="color:var(--terra)">对SANI启示：Loewe工艺奖将聚光灯正式投向"东亚匠人"（中国艺术家入围），非遗工艺国际话语权争夺窗口期已至——SANI需思考如何在全球工艺叙事中率先锚定蓝靛染标杆位置；JNBY城市游牧快闪向东北扩张路径与SANI"华南向全国"策略高度相似，具体落地逻辑值得深度研究。</b>
+  </div>
+</div>
+
+<!-- ═══════════ TABS ═══════════ -->
+<div class="tab-bar" id="tabBar">
+  <button class="tab-btn active" onclick="switchTab(0)">本周重点动态</button>
+  <button class="tab-btn" onclick="switchTab(1)">趋势信号提炼</button>
+  <button class="tab-btn" onclick="switchTab(2)">对SANI设计启示</button>
+  <button class="tab-btn" onclick="switchTab(3)">当季主推款 · 价格带</button>
+</div>
+
+<!-- ═══════════ TAB 0：本周重点动态 ═══════════ -->
+<div class="tab-content active" id="tab0">
+
+<!-- 筛选栏 -->
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px">
+  <button class="filter-btn active" onclick="filterBrands('all')" data-filter="all">全部 <span class="filter-count">19</span></button>
+  <button class="filter-btn" onclick="filterBrands('intl')" data-filter="intl">🌍 国外灵感 <span class="filter-count">7</span></button>
+  <button class="filter-btn" onclick="filterBrands('dom1')" data-filter="dom1">🇨🇳 国内一线 <span class="filter-count">7</span></button>
+  <button class="filter-btn" onclick="filterBrands('dom2')" data-filter="dom2">📍 国内二线 <span class="filter-count">3</span></button>
+  <button class="filter-btn" onclick="filterBrands('online')" data-filter="online">💻 线上品牌 <span class="filter-count">2</span></button>
+</div>
+
+<!-- ────── 国外灵感参考 ────── -->
+<div class="tier-divider" data-tier-section="intl">🌍 国外灵感参考 &nbsp;<span>7个品牌 · 设计趋势参照</span></div>
+
+<!-- Loewe -->
+<div class="card brand-card" data-tier="intl" style="border-left:3px solid var(--olive)">
+  <div class="card-head">
+    <div class="brand-icon" style="background:linear-gradient(135deg,#2a1f2e,#5a3f6e);color:#C8A870;font-size:9px">Loewe</div>
+    <div style="flex:1">
+      <div style="font-size:15px;font-weight:700">Loewe — 2026工艺奖新加坡颁奖 · 东亚匠人进入全球话语 · ×On Running联名发售</div>
+      <div style="font-size:12px;color:var(--text3);margin-top:2px"><span class="badge badge-purple" style="font-size:10px">国外灵感</span> &nbsp; 西班牙 · ¥3,000+</div>
+    </div>
+    <span class="badge badge-red">重点</span>
+  </div>
+  <div class="detail-line"><b>工艺奖2026：</b>5月12日晚，Loewe Foundation在新加坡国家美术馆宣布2026年度工艺奖大奖得主为韩国陶瓷艺术家Jongjin Park，作品《Strata of Illusion》以纸片叠层涂覆彩色瓷浆入窑烧制，在高温中自然弯曲成型；<b style="color:var(--olive)">中国艺术家南维作品《Knot-Loving》漆面皮革雕塑获特别提名</b>，30件入围作品展览于新加坡国家美术馆展出至6月14日</div>
+  <div class="detail-line"><b>×On Running联名：</b>5月14日，Loewe × On Running SS26联名系列正式开售，共9款配色覆盖三款鞋型（LightSpray Cloudmonster / Cloudtilt Hi / Cloudsolo × 6配色），为2024年首次合作的延续，高端时装×性能跑鞋跨界模式持续验证中</div>
+  <div class="detail-line"><b>中国市场：</b>中国区新任总裁Eva Baquedano（原东南亚及大洋洲总经理）就任后首完整监测周，关注其本地化策略调整信号；品牌目前在中国37家门店，上海静安Loewe House（685㎡）为旗舰</div>
+  <div class="mkt-bar"><b>📊 市场反响：</b>Wallpaper*/Vogue/ELLE等全球媒体密集报道工艺奖颁奖；"东亚工艺"话题在国内小红书/微博同步发酵；Loewe×On联名当日多配色快速售罄，二手溢价可观</div>
+  <div class="detail-line" style="margin-top:8px;padding:8px 12px;background:var(--terra-light);border-radius:4px"><b style="color:var(--terra)">⚡ 对SANI关注点：</b>Loewe工艺奖2026将中国艺术家推至全球聚光灯下——"东亚非遗工艺"在国际语境中的能见度正在上升。SANI蓝靛染工艺应加速布局国际工艺奖项申报赛道；同时Loewe×On联名验证"自然生活+运动场景"交集的消费潜力，对SANI"City Walk场景"产品延伸方向有参照</div>
+  <div class="sources-row">
+    <a class="source" href="https://www.wallpaper.com/design-interiors/loewe-craft-prize-2026-winner-announcement" target="_blank">Wallpaper* · Loewe工艺奖2026颁奖现场报道</a>
+    <a class="source" href="https://www.buro247.my/fashion/style/fashion-buzz-may-2026.html" target="_blank">Buro247 · 2026年5月时尚要闻综述</a>
+    <a class="source" href="https://www.soleretriever.com/news/articles/loewe-on-running-spring-summer-2026-release-date-may-2026" target="_blank">Sole Retriever · Loewe × On Running SS26联名发售</a>
+    <a class="source" href="https://jingdaily.com/" target="_blank">Jing Daily · Loewe工艺奖及中国市场动态</a>
+  </div>
+</div>
+
+<!-- Louis Vuitton -->
+<div class="card brand-card" data-tier="intl">
+  <div class="card-head">
+    <div class="brand-icon" style="background:linear-gradient(135deg,#1a1500,#4a3d00);color:#C8A870;font-size:8px">LV</div>
+    <div style="flex:1">
+      <div style="font-size:15px;font-weight:700">Louis Vuitton — FW26系列持续高能见度 · 国内高净值通勤替代认知稳步建立</div>
+      <div style="font-size:12px;color:var(--text3);margin-top:2px"><span class="badge badge-purple" style="font-size:10px">国外灵感</span> &nbsp; 法国 · ¥3,000+</div>
+    </div>
+    <span class="badge badge-purple">灵感</span>
+  </div>
+  <div class="detail-line"><b>本周动态：</b>FW26系列媒体覆盖持续高位；Ghesquière廓形精确化路径——宽肩结构套装、未来感皮革拼接、Logo老花新面料——买手店关注度稳定；本周无重大新闻事件，维持常规高频曝光</div>
+  <div class="detail-line"><b>对设计的参照价值：</b>LV在"高辨识度廓形 + 品牌符号强化"路径上的执行力，是品牌图腾化建设的顶级样本；高纯度撞色与市场低饱和趋势形成差异化</div>
+  <div class="mkt-bar"><b>📊 市场反响：</b>国内高净值客群对LV女装的正装替代认知持续提升；品牌在社交媒体的视觉策略保持行业顶级水准</div>
+  <div class="sources-row">
+    <a class="source" href="https://us.louisvuitton.com/eng-us/magazine/fashion-shows" target="_blank">Louis Vuitton · 时装秀新闻页</a>
+    <a class="source" href="https://luxe.co/" target="_blank">华丽志 · 奢侈品牌动态</a>
+  </div>
+</div>
+
+<!-- Max Mara -->
+<div class="card brand-card" data-tier="intl">
+  <div class="card-head">
+    <div class="brand-icon" style="background:linear-gradient(135deg,#2a2020,#5a4040);color:#e4e0db;font-size:8px">Max<br>Mara</div>
+    <div style="flex:1">
+      <div style="font-size:15px;font-weight:700">Max Mara — 通勤极简标杆稳定运营 · 夏季棉麻系列天猫动销平稳</div>
+      <div style="font-size:12px;color:var(--text3);margin-top:2px"><span class="badge badge-purple" style="font-size:10px">国外灵感</span> &nbsp; 意大利 · ¥3,000+</div>
+    </div>
+    <span class="badge badge-purple">灵感</span>
+  </div>
+  <div class="detail-line"><b>本周动态：</b>春夏主推H廓形连衣裙及大地色棉麻系列在天猫国际旗舰店动销稳定，基础款再现季季断货现象；品牌本周无重大新闻，延续低调高质感运营路线</div>
+  <div class="detail-line"><b>对设计的参照价值：</b>"把一件外套做到极致"的品类聚焦策略，是SANI思考核心品类IP化的重要参照——Max Mara大衣即是品牌代名词</div>
+  <div class="mkt-bar"><b>📊 市场反响：</b>国内职场精英女性圈层中Max Mara通勤着装认知度极高；天猫国际旗舰店基础款季季断货，印证品质溢价在中国市场的有效性</div>
+  <div class="sources-row">
+    <a class="source" href="https://luxe.co/" target="_blank">华丽志 · 国际品牌中国市场动态</a>
+  </div>
+</div>
+
+<!-- Lemaire -->
+<div class="card brand-card" data-tier="intl">
+  <div class="card-head">
+    <div class="brand-icon" style="background:linear-gradient(135deg,#1e2520,#3e4a40);color:#a0b090;font-size:8px">Lemaire</div>
+    <div style="flex:1">
+      <div style="font-size:15px;font-weight:700">Lemaire — 极简设计师哲学 · 宽松廓形与自然材质路径不动摇</div>
+      <div style="font-size:12px;color:var(--text3);margin-top:2px"><span class="badge badge-purple" style="font-size:10px">国外灵感</span> &nbsp; 法国 · ¥3,000+</div>
+    </div>
+    <span class="badge badge-purple">灵感</span>
+  </div>
+  <div class="detail-line"><b>持续追踪：</b>Christophe Lemaire延续"智识极简"路径——棉质宽松风衣 · 流线型套装 · 轻薄吊带连衣裙；面料以有机棉、轻薄天丝为主，拒绝任何装饰性元素</div>
+  <div class="detail-line"><b>对设计的参照价值：</b>Lemaire证明"极简不等于廉价"——通过版型精度和面料质感实现溢价，是SANI自然松弛路线的国际级参照标准</div>
+  <div class="sources-row">
+    <a class="source" href="https://www.lemaire.fr/" target="_blank">Lemaire官网</a>
+    <a class="source" href="https://luxe.co/tag/%E5%A5%B3%E8%A3%85" target="_blank">华丽志 · 设计师品牌追踪</a>
+  </div>
+</div>
+
+<!-- Soeur -->
+<div class="card brand-card" data-tier="intl">
+  <div class="card-head">
+    <div class="brand-icon" style="background:linear-gradient(135deg,#1e2535,#3a4a6a);color:#8aacdf;font-size:9px">Soeur</div>
+    <div style="flex:1">
+      <div style="font-size:15px;font-weight:700">Soeur — 法式轻文艺热度不减 · 国内买手店引进后续效应发酵</div>
+      <div style="font-size:12px;color:var(--text3);margin-top:2px"><span class="badge badge-purple" style="font-size:10px">国外灵感</span> &nbsp; 法国 · ¥1,000-3,000</div>
+    </div>
+    <span class="badge badge-purple">灵感</span>
+  </div>
+  <div class="detail-line"><b>本周动态：</b>栋梁、连卡佛等国内高端买手店引进后持续发酵；小红书"Soeur风格"话题稳定增长，用户自发分享夏季亚麻衬衫、低饱和碎花裙的穿搭方案持续增加</div>
+  <div class="detail-line"><b>2026SS重点：</b>碎花泡泡袖连衣裙 · 宽松亚麻衬衫 · 低饱和蓝白印花半裙——轻设计、高辨识度，在"不用力"的设计语言里表达法式少女感</div>
+  <div class="detail-line" style="margin-top:8px;padding:8px 12px;background:var(--purple-light);border-radius:4px"><b style="color:var(--purple)">⚡ 对SANI关注点：</b>Soeur在"轻文艺"方向的价格带（¥1,000-3,000）与SANI重叠，其印花逻辑和廓形轻盈感值得设计部重点参考</div>
+  <div class="sources-row">
+    <a class="source" href="https://soeur.fr/" target="_blank">Soeur官网 · 2026SS系列</a>
+    <a class="source" href="https://luxe.co/tag/%E5%A5%B3%E8%A3%85" target="_blank">华丽志 · 法国轻设计师品牌</a>
+  </div>
+</div>
+
+<!-- Enfold -->
+<div class="card brand-card" data-tier="intl">
+  <div class="card-head">
+    <div class="brand-icon" style="background:linear-gradient(135deg,#252525,#454545);color:#d0d0d0;font-size:8px">Enfold</div>
+    <div style="flex:1">
+      <div style="font-size:15px;font-weight:700">Enfold — 廓形即风格 · 日本精确版型路径持续</div>
+      <div style="font-size:12px;color:var(--text3);margin-top:2px"><span class="badge badge-purple" style="font-size:10px">国外灵感</span> &nbsp; 日本 · ¥2,000-4,000</div>
+    </div>
+    <span class="badge badge-purple">灵感</span>
+  </div>
+  <div class="detail-line"><b>持续追踪：</b>"廓形即风格"路径进一步强化——oversized宽肩外套 · 精确裁剪裤装 · 无结构感垂坠连衣裙；色系无彩色+淡奶茶，面料精纺羊毛混纺/高支棉</div>
+  <div class="detail-line"><b>对设计的参照价值：</b>Enfold是"版型≥装饰"设计哲学的最佳样本，其宽肩外套廓形和裤装结构线是版型研究的优质素材库</div>
+  <div class="sources-row">
+    <a class="source" href="https://www.enfold.jp/" target="_blank">Enfold官网</a>
+    <a class="source" href="https://www.luxurywatcher.com/zh-Hans/article/35274" target="_blank">LuxuryWatcher · 2026春夏女装趋势</a>
+  </div>
+</div>
+
+<!-- UN3D. -->
+<div class="card brand-card" data-tier="intl">
+  <div class="card-head">
+    <div class="brand-icon" style="background:linear-gradient(135deg,#1a2535,#2a3f5f);color:#7ab0e0;font-size:8px">UN3D.</div>
+    <div style="flex:1">
+      <div style="font-size:15px;font-weight:700">UN3D. — 日系年轻设计感 · 不对称剪裁与轻透材质</div>
+      <div style="font-size:12px;color:var(--text3);margin-top:2px"><span class="badge badge-purple" style="font-size:10px">国外灵感</span> &nbsp; 日本 · ¥1,000-3,000</div>
+    </div>
+    <span class="badge badge-purple">灵感</span>
+  </div>
+  <div class="detail-line"><b>持续追踪：</b>不对称剪裁连衣裙为主力——荷叶边细节 · 薄透欧根纱拼接 · 结构感不规则下摆；偏年轻化，适合作为"年轻设计方向"前沿参考</div>
+  <div class="detail-line"><b>对设计的参照价值：</b>在1,000-3,000价格带内实现"可见设计感"，印证设计差异化并不必然带来高成本</div>
+  <div class="sources-row">
+    <a class="source" href="https://un3d.ambidex.co.jp/" target="_blank">UN3D.官网</a>
+    <a class="source" href="https://www.luxurywatcher.com/zh-Hans/article/35274" target="_blank">LuxuryWatcher · 2026SS趋势总览</a>
+  </div>
+</div>
+
+<!-- ────── 国内一线 ────── -->
+<div class="tier-divider" data-tier-section="dom1">🇨🇳 国内一线女装 &nbsp;<span>7个品牌 · 重点监测</span></div>
+
+<!-- JNBY -->
+<div class="card brand-card" data-tier="dom1" style="border-left:3px solid var(--olive)">
+  <div class="card-head">
+    <div class="brand-icon" style="background:linear-gradient(135deg,#2d3a3a,#4a5858);color:#fff">JNBY</div>
+    <div style="flex:1">
+      <div style="font-size:15px;font-weight:700">JNBY — 「游牧新章·散步时刻」沈阳快闪落地 · 李心洁演绎城市游牧哲学</div>
+      <div style="font-size:12px;color:var(--text3);margin-top:2px"><span class="date-tag recent">2026.05</span> &nbsp; 国内一线 · ¥1,000-3,000</div>
+    </div>
+    <span class="badge badge-red">重点</span>
+  </div>
+  <div class="detail-line"><b>沈阳快闪：</b>5月，JNBY以「游牧新章·散步时刻」为主题在沈阳推出快闪活动，演员李心洁出席演绎2026春夏「凝视」系列，灵动呈现品牌城市游牧哲学；这是继成都万象城（2025春夏）之后，城市游牧叙事向东北市场的首次延伸落地</div>
+  <div class="detail-line"><b>「凝视」系列铺货：</b>「品质之选」子系列精纺面料套装、花卉印花系列（蔷薇/喇叭花/绣球花）持续推进夏季铺货；天丝牛仔A型半裙等单品天猫旗舰店动销稳定；「不止盒子」先试后买模式持续激活复购</div>
+  <div class="detail-line"><b>面料工艺：</b>亚麻柞蚕丝混纺 · 全棉盐缩帆布 · 意大利Borghi 1819精梳棉主推；"布尽其用"贵州日晒白非遗项目持续推进，牦牛绒研发中</div>
+  <div class="mkt-bar"><b>📊 市场反响：</b>李心洁演绎快闪活动获时尚媒体报道；城市游牧主题小红书UGC内容互动量持续高位；延续上半财年线上渠道+25.1%增长势能</div>
+  <div class="detail-line" style="margin-top:8px;padding:8px 12px;background:var(--terra-light);border-radius:4px"><b style="color:var(--terra)">⚡ 对SANI关注点：</b>JNBY城市游牧快闪从成都→沈阳的扩张节奏与SANI"华南向全国"路径高度吻合——建议深度研究其快闪选址逻辑（购物中心核心点位+明星到场+主题叙事）和东北客群触达策略，作为SANI下半年全国快闪计划的参照</div>
+  <div class="sources-row">
+    <a class="source" href="https://www.ellechina.com/" target="_blank">ELLE中国 · 李心洁亮相JNBY沈阳快闪报道</a>
+    <a class="source" href="https://cn.jnby.com/" target="_blank">JNBY品牌官网 · 2026春夏凝视</a>
+    <a class="source" href="https://luxe.co/brand/jnby" target="_blank">华丽志 · 江南布衣集团动态</a>
+  </div>
+</div>
+
+<!-- MO&Co. -->
+<div class="card brand-card" data-tier="dom1" style="border-left:3px solid var(--olive)">
+  <div class="card-head">
+    <div class="brand-icon" style="background:linear-gradient(135deg,#1a1a2e,#353560);color:#fff">MO&Co</div>
+    <div style="flex:1">
+      <div style="font-size:15px;font-weight:700">MO&Co. — 张曼玉代言进入长线深耕期 · 夏季内容向日常都市通勤收敛</div>
+      <div style="font-size:12px;color:var(--text3);margin-top:2px"><span class="date-tag recent">本周追踪</span> &nbsp; 国内一线 · ¥800-2,000</div>
+    </div>
+    <span class="badge badge-red">重点</span>
+  </div>
+  <div class="detail-line"><b>代言深耕：</b>张曼玉代言进入长线维护期，官方小红书内容从"五一假期松弛感"收敛至"日常都市通勤"场景；2026春季时装短片（白衬衫+黑咖啡/针织+爱宠/丹宁漫步）持续被用户二次传播，"Be COOL就是Be REAL"话题热度维持</div>
+  <div class="detail-line"><b>夏季产品：</b>张曼玉同款宽松亚麻衬衫持续动销；慵懒廓形休闲外套、高腰阔腿裤为夏季主力SKU；Moomin联名产品进入消化尾期，本周新品上架节奏回归常规</div>
+  <div class="detail-line"><b>NOIR高端线：</b>英文独立站上线后海外流量持续接入；Kendall Jenner内容矩阵保持海外曝光，国内新动作暂无</div>
+  <div class="mkt-bar"><b>📊 市场反响：</b>张曼玉"去传奇化"日常叙事持续产生品牌形象升级效果；EPO集团MO&Co.+Edition+little MO&Co.协同效应稳步显现；英文官网上线后品牌国际化布局加速</div>
+  <div class="detail-line" style="margin-top:8px;padding:8px 12px;background:var(--terra-light);border-radius:4px"><b style="color:var(--terra)">⚡ 对SANI关注点：</b>代言人从"爆发期"进入"长线维护期"，这阶段内容策略是检验大使长线价值的真实考验——观察MO&Co.如何平衡"日常松弛"与"品牌调性"叙事延续性，对SANI未来品牌大使运营策略有直接参照价值</div>
+  <div class="sources-row">
+    <a class="source" href="https://www.cosmopolitancn.com/cosmo/fashion/detail/46060" target="_blank">时尚COSMO · MO&Co.张曼玉代言春季报道</a>
+    <a class="source" href="https://www.mococn.com/" target="_blank">MO&Co. 品牌官网</a>
+    <a class="source" href="https://luxe.co/" target="_blank">华丽志 · EPO集团追踪</a>
+  </div>
+</div>
+
+<!-- Marisfrolg -->
+<div class="card brand-card" data-tier="dom1" style="border-left:3px solid var(--olive)">
+  <div class="card-head">
+    <div class="brand-icon" style="background:linear-gradient(135deg,#3a2a1a,#6a4a2a);color:#C8A870;font-size:8px">玛丝<br>菲尔</div>
+    <div style="flex:1">
+      <div style="font-size:15px;font-weight:700">Marisfrolg 玛丝菲尔 — 「即兴节奏」正式入市 · 抖音/小红书反馈积极 · 高叶私服效应发酵</div>
+      <div style="font-size:12px;color:var(--text3);margin-top:2px"><span class="date-tag recent">本周追踪</span> &nbsp; 国内一线 · ¥2,000-5,000</div>
+    </div>
+    <span class="badge badge-gold">重点</span>
+  </div>
+  <div class="detail-line"><b>「即兴节奏」入市反馈：</b>4月18日上海发布的2026春夏「即兴节奏 Improvised Pulse」系列正式进入全渠道铺货期；抖音用户热议廓形层叠连衣裙与飘片流苏外套的"气质穿搭"，小红书高频出现"高级感""新中式""呼吸空间"关键词评价；集团直播专场互动率高</div>
+  <div class="detail-line"><b>明星自发效应：</b>演员高叶私服穿着玛丝菲尔被时尚媒体捕捉并做品牌借势传播，非付费明星曝光进一步拉升品牌高端气质认知；品牌借势输出相关内容，社媒搜索量明显提升</div>
+  <div class="detail-line"><b>多平台推广：</b>品牌持续通过抖音/小红书/微博多平台发布「即兴节奏」穿搭图鉴及"面料与身体间呼吸空间"设计哲学解读内容，系列化叙事完整</div>
+  <div class="mkt-bar"><b>📊 市场反响：</b>「即兴节奏」入市首两周终端反馈正向；廓形层叠连衣裙（¥4,500）和飘片流苏外套（¥3,800）为热议主力SKU；高叶私服效应带来非付费曝光增量，品牌形象感知提升</div>
+  <div class="detail-line" style="margin-top:8px;padding:8px 12px;background:var(--olive-light);border-radius:4px"><b style="color:var(--olive)">⚡ 对SANI关注点：</b>玛丝菲尔从"大秀发布"到"社媒种草"的两级传播链路值得借鉴——发布秀制造话题，抖音/小红书内容消化热度，形成完整叙事闭环。SANI若举办品牌活动，需提前规划后续内容消化策略，避免"活动结束热度断崖"</div>
+  <div class="sources-row">
+    <a class="source" href="https://www.newrank.cn/brand?brandName=%E7%8E%9B%E4%B8%9D%E8%8F%B2%E5%B0%94" target="_blank">新榜声量通 · 玛丝菲尔品牌社媒详情分析</a>
+    <a class="source" href="https://www.ellechina.com/" target="_blank">ELLE中国 · Marisfrolg相关报道</a>
+    <a class="source" href="https://www.marisfrolg.com/" target="_blank">玛丝菲尔品牌官网</a>
+  </div>
+</div>
+
+<!-- AUM -->
+<div class="card brand-card" data-tier="dom1">
+  <div class="card-head">
+    <div class="brand-icon" style="background:linear-gradient(135deg,#252525,#484848);color:#d0d0d0;font-size:9px">AUM</div>
+    <div style="flex:1">
+      <div style="font-size:15px;font-weight:700">AUM — 极简通勤稳定运营 · 天然材质夏季面料系列预热中</div>
+      <div style="font-size:12px;color:var(--text3);margin-top:2px"><span class="date-tag">本周追踪</span> &nbsp; 国内一线 · ¥1,000-3,000</div>
+    </div>
+    <span class="badge badge-green">常规</span>
+  </div>
+  <div class="detail-line"><b>本周动态：</b>极简通勤套装天猫动销平稳；官方小红书持续输出「职场穿搭」内容，调性与功能性兼顾；观察是否跟进轻薄亚麻/棉麻材质做夏季面料升级</div>
+  <div class="detail-line"><b>追踪重点：</b>关注AUM秋冬系列预告节奏，以及玛丝菲尔集团是否将AUM与「即兴节奏」做联动营销</div>
+  <div class="sources-row">
+    <a class="source" href="https://luxe.co/tag/%E5%A5%B3%E8%A3%85" target="_blank">华丽志 · 国内女装追踪</a>
+  </div>
+</div>
+
+<!-- Edition -->
+<div class="card brand-card" data-tier="dom1">
+  <div class="card-head">
+    <div class="brand-icon" style="background:linear-gradient(135deg,#1a1a2e,#303060);color:#B0A8D8;font-size:8px">Edition</div>
+    <div style="flex:1">
+      <div style="font-size:15px;font-weight:700">Edition — 借张曼玉代言热度 · 母品牌联动效应持续</div>
+      <div style="font-size:12px;color:var(--text3);margin-top:2px"><span class="date-tag">本周追踪</span> &nbsp; 国内一线 · ¥2,000-4,000</div>
+    </div>
+    <span class="badge badge-green">常规</span>
+  </div>
+  <div class="detail-line"><b>本周动态：</b>借助MO&Co.张曼玉代言热度，Edition官方渠道访客量有所提升；精致西装套装和夏季轻奢连衣裙为当季主推</div>
+  <div class="detail-line"><b>追踪重点：</b>关注Edition是否借助母品牌代言热度做独立联动内容营销，以及轻奢线秋冬预告方向</div>
+  <div class="sources-row">
+    <a class="source" href="https://luxe.co/" target="_blank">华丽志 · EPO集团品牌矩阵</a>
+  </div>
+</div>
+
+<!-- Joc -->
+<div class="card brand-card" data-tier="dom1">
+  <div class="card-head">
+    <div class="brand-icon" style="background:linear-gradient(135deg,#1e2530,#3a4555);color:#8ab0d0;font-size:9px">Joc</div>
+    <div style="flex:1">
+      <div style="font-size:15px;font-weight:700">Joc — 极简主义高质感定位 · 基线数据建立中</div>
+      <div style="font-size:12px;color:var(--text3);margin-top:2px"><span class="date-tag">持续追踪</span> &nbsp; 国内一线 · ¥1,000-4,000</div>
+    </div>
+    <span class="badge badge-blue">关注</span>
+  </div>
+  <div class="detail-line"><b>追踪进展：</b>上周新纳入监测后，本周启动天猫旗舰店上新监测及官方小红书内容追踪；夏季精纺天丝面料产品上新节奏稳定</div>
+  <div class="detail-line"><b>品牌定位：</b>极简主义/高质感路线，面向25-45岁具有审美自主性的女性消费者；价格带¥1,000-4,000，精品化路线</div>
+  <div class="detail-line" style="margin-top:8px;padding:8px 12px;background:var(--blue-light);border-radius:4px"><b style="color:var(--blue)">⚡ 对SANI关注点：</b>Joc与SANI在价格带和目标客群上存在交集，后续重点关注其产品结构和视觉呈现的差异化策略</div>
+  <div class="sources-row">
+    <a class="source" href="https://luxe.co/tag/%E5%A5%B3%E8%A3%85" target="_blank">华丽志 · 女装品牌动态</a>
+  </div>
+</div>
+
+<!-- INSUN -->
+<div class="card brand-card" data-tier="dom1">
+  <div class="card-head">
+    <div class="brand-icon" style="background:linear-gradient(135deg,#2a2035,#504060);color:#c0a0d0;font-size:8px">INSUN</div>
+    <div style="flex:1">
+      <div style="font-size:15px;font-weight:700">INSUN 恩裳 — 成熟通勤稳定运营 · 连续四周公开信息极少</div>
+      <div style="font-size:12px;color:var(--text3);margin-top:2px"><span class="date-tag">本周追踪</span> &nbsp; 国内一线 · ¥1,000-3,000</div>
+    </div>
+    <span class="badge badge-green">常规</span>
+  </div>
+  <div class="detail-line"><b>本周动态：</b>通勤女装稳定运营，成熟客群粘性高；线下门店恢复常规经营节奏，本周公开信息量依然极少</div>
+  <div class="detail-line" style="margin-top:8px;padding:8px 12px;background:var(--terra-light);border-radius:4px"><b style="color:var(--terra)">⚠️ 追踪提示：</b>INSUN连续四周公开信息空白，与达衣岩并列为本周巡店优先级最高品牌，<b>本周必须安排线下巡店</b>，重点关注：夏季陈列主题变化、主推品类及面料方向、是否有未公开新品系列</div>
+  <div class="sources-row">
+    <a class="source" href="https://luxe.co/tag/%E5%A5%B3%E8%A3%85" target="_blank">华丽志 · 国内女装市场</a>
+  </div>
+</div>
+
+<!-- ────── 国内二线 ────── -->
+<div class="tier-divider" data-tier-section="dom2">📍 国内二线女装 &nbsp;<span>3个品牌 · 持续监测</span></div>
+
+<!-- broadcast播 -->
+<div class="card brand-card" data-tier="dom2" style="border-left:3px solid var(--blue)">
+  <div class="card-head">
+    <div class="brand-icon" style="background:linear-gradient(135deg,#1e2a3a,#2e4a6a);color:#fff;font-size:9px">播</div>
+    <div style="flex:1">
+      <div style="font-size:15px;font-weight:700">broadcast播 — 倪妮剧集《隐身的名字》热度持续 · 代言人媒体价值二次发酵</div>
+      <div style="font-size:12px;color:var(--text3);margin-top:2px"><span class="date-tag recent">本周追踪</span> &nbsp; 国内二线 · ¥800-2,000</div>
+    </div>
+    <span class="badge badge-blue">关注</span>
+  </div>
+  <div class="detail-line"><b>代言人热度联动：</b>代言人倪妮主演女性情感悬疑剧《隐身的名字》（3月18日央视/腾讯视频播出）热度持续，剧中独立都市女性审美与broadcast品牌调性高度契合；品牌官方小红书借势同步输出倪妮演绎"风辞典"系列场景穿搭内容，实现剧集流量→品牌流量的二次转化</div>
+  <div class="detail-line"><b>产品动销：</b>「风辞典」新春系列主力SKU动销持续稳健；马尾绣「东方之礼」系列与Enikő Eged马年限定消化中；品牌矩阵三线（播 broadcast / 播 bo / 播 broadcute）并行运营</div>
+  <div class="detail-line"><b>渠道数据：</b>截至2024年底全国569家店铺；天猫/抖音官方店铺+直播+社群多渠道并行；用户自发晒单率保持高位</div>
+  <div class="mkt-bar"><b>📊 市场反响：</b>倪妮"真实日常感"形象与播brand DNA高度匹配；剧集播映期间品牌相关搜索量有所提升；"穿上就不想脱""摸起来很舒服"持续为高频好评</div>
+  <div class="detail-line" style="margin-top:8px;padding:8px 12px;background:var(--blue-light);border-radius:4px"><b style="color:var(--blue)">⚡ 对SANI关注点：</b>播在代言人剧集热度期的内容运营策略——非硬广植入，而是"场景穿搭同款"形式借势流量，这种松绑式代言人联动对SANI未来品牌大使内容策略有直接参照价值</div>
+  <div class="sources-row">
+    <a class="source" href="https://baike.baidu.com/item/%E5%80%AA%E5%A6%AE/24849" target="_blank">百度百科 · 倪妮词条（含《隐身的名字》信息）</a>
+    <a class="source" href="https://baike.baidu.com/item/Broadcast/16216973" target="_blank">百度百科 · 播broadcast品牌页</a>
+    <a class="source" href="https://luxe.co/tag/%E5%A5%B3%E8%A3%85" target="_blank">华丽志 · 国内设计师品牌分析</a>
+  </div>
+</div>
+
+<!-- 达衣岩 -->
+<div class="card brand-card" data-tier="dom2">
+  <div class="card-head">
+    <div class="brand-icon" style="background:linear-gradient(135deg,#5c3d2e,#7a5a4a);color:#fff;font-size:9px">达衣岩</div>
+    <div style="flex:1">
+      <div style="font-size:15px;font-weight:700">达衣岩 — 云南子公司运营中 · 连续四周公开信息极少</div>
+      <div style="font-size:12px;color:var(--text3);margin-top:2px"><span class="date-tag">本周追踪</span> &nbsp; 国内二线 · ¥800-2,000</div>
+    </div>
+    <span class="badge badge-green">常规</span>
+  </div>
+  <div class="detail-line"><b>持续追踪：</b>达衣岩服饰（云南）有限公司运营中，深耕民族工艺资源（扎染/蜡染等）；绘画印花系列夏季铺货中；本周公开信息量不足，暂无重大事件</div>
+  <div class="detail-line" style="margin-top:8px;padding:8px 12px;background:var(--terra-light);border-radius:4px"><b style="color:var(--terra)">⚠️ 追踪提示：</b>达衣岩连续四周公开信息空白，与INSUN同列本周巡店最高优先级，<b>本周必须安排线下巡店</b>，重点关注：云南工艺资源是否已有产品落地、民族元素（扎染/蜡染）入夏季产品线情况、价格带变化</div>
+  <div class="sources-row">
+    <a class="source" href="http://www.donoratico.cn/" target="_blank">达衣岩品牌官网</a>
+    <a class="source" href="https://luxe.co/tag/%E5%A5%B3%E8%A3%85" target="_blank">华丽志 · 国内二线品牌追踪</a>
+  </div>
+</div>
+
+<!-- 水云间 -->
+<div class="card brand-card" data-tier="dom2">
+  <div class="card-head">
+    <div class="brand-icon" style="background:linear-gradient(135deg,#2c4a52,#4a6a72);color:#fff;font-size:8px">水云间</div>
+    <div style="flex:1">
+      <div style="font-size:15px;font-weight:700">水云间 — 五大场景策略夏季新品持续上架 · 户外周末场景品类扩展中</div>
+      <div style="font-size:12px;color:var(--text3);margin-top:2px"><span class="date-tag">本周追踪</span> &nbsp; 国内二线 · ¥500-1,500</div>
+    </div>
+    <span class="badge badge-green">常规</span>
+  </div>
+  <div class="detail-line"><b>本周动态：</b>「上班/商旅/日常周末/户外周末/聚会」五大场景穿搭夏季新品持续上架；微信私域推送维持常规频次；关注户外周末场景品类是否有专项品类扩展</div>
+  <div class="detail-line"><b>追踪重点：</b>水云间五大场景策略是SANI"52周生活日历"策略的最直接竞争对标，持续追踪其场景落地与SANI的产品差异点</div>
+  <div class="sources-row">
+    <a class="source" href="https://luxe.co/tag/%E5%A5%B3%E8%A3%85" target="_blank">华丽志 · 二线女装品牌追踪</a>
+  </div>
+</div>
+
+<!-- ────── 线上品牌 ────── -->
+<div class="tier-divider" data-tier-section="online">💻 线上品牌 &nbsp;<span>2个品牌 · 电商动态监测</span></div>
+
+<!-- 开间 -->
+<div class="card brand-card" data-tier="online">
+  <div class="card-head">
+    <div class="brand-icon" style="background:linear-gradient(135deg,#1e2e25,#3a5040);color:#7EB890;font-size:9px">开间</div>
+    <div style="flex:1">
+      <div style="font-size:15px;font-weight:700">开间 — 极简线上品牌 · 夏季上新节奏加快</div>
+      <div style="font-size:12px;color:var(--text3);margin-top:2px"><span class="date-tag">本周追踪</span> &nbsp; 线上品牌 · ¥300-800</div>
+    </div>
+    <span class="badge badge-green">常规</span>
+  </div>
+  <div class="detail-line"><b>本周动态：</b>夏季棉麻衬衫、极简连衣裙上新频次加快；小红书内容投放频次提升，针对"极简通勤""夏日棉麻"关键词布局</div>
+  <div class="detail-line"><b>追踪重点：</b>开间在极简审美用户中的线上渗透速度，可作为SANI判断该客群线上消费能力的参照指标</div>
+  <div class="sources-row">
+    <a class="source" href="https://luxe.co/tag/%E5%A5%B3%E8%A3%85" target="_blank">华丽志 · 线上女装品牌动态</a>
+  </div>
+</div>
+
+<!-- 知之 -->
+<div class="card brand-card" data-tier="online">
+  <div class="card-head">
+    <div class="brand-icon" style="background:linear-gradient(135deg,#2a2035,#4a3560);color:#b090d0;font-size:9px">知之</div>
+    <div style="flex:1">
+      <div style="font-size:15px;font-weight:700">知之 — 文艺内容驱动型品牌 · 五一后内容频次恢复</div>
+      <div style="font-size:12px;color:var(--text3);margin-top:2px"><span class="date-tag">本周追踪</span> &nbsp; 线上品牌 · ¥300-800</div>
+    </div>
+    <span class="badge badge-green">常规</span>
+  </div>
+  <div class="detail-line"><b>本周动态：</b>文艺风棉麻连衣裙和宽松衬衫套装为当季主推；五一后小红书内容频次恢复，情绪共鸣型内容持续为核心运营策略</div>
+  <div class="detail-line"><b>追踪重点：</b>知之的内容运营方式和用户互动质量，可作为SANI官方小红书"情绪共鸣优先"策略的参照样本</div>
+  <div class="sources-row">
+    <a class="source" href="https://luxe.co/tag/%E5%A5%B3%E8%A3%85" target="_blank">华丽志 · 线上文艺品牌追踪</a>
+  </div>
+</div>
+
+</div><!-- /tab0 -->
+
+<!-- ═══════════ TAB 1：趋势信号提炼 ═══════════ -->
+<div class="tab-content" id="tab1">
+<div style="font-size:13px;color:var(--text3);margin-bottom:18px">以下趋势信号从本周竞品动态中提炼，结合2026春夏时装周方向及市场渠道变化交叉验证</div>
+
+<div class="card" style="border-left:3px solid var(--olive)">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+    <span style="font-size:24px">🏺</span>
+    <span style="font-size:15px;font-weight:700">趋势一：工艺叙事升维——从"匠心展示"到"东亚话语权争夺"</span>
+    <span class="badge badge-red" style="margin-left:auto">高关注</span>
+  </div>
+  <div class="detail-line">Loewe工艺奖2026将聚光灯投向东亚陶瓷/漆艺传统，韩国陶瓷家获大奖、中国艺术家入围特别提名；JNBY"布尽其用"贵州非遗项目持续推进；broadcast播马尾绣「东方之礼」系列动销稳健。三个不同层级的品牌在同一赛道发力——"东亚非遗工艺"的国际话语权争夺进入白热化阶段，谁先建立标杆叙事，谁就占据不可替代的心智位置。</div>
+  <div class="detail-line" style="margin-top:6px"><b>关联品牌：</b>Loewe（工艺奖） · JNBY（布尽其用） · broadcast播（马尾绣） · SANI（蓝靛染非遗）</div>
+</div>
+
+<div class="card" style="border-left:3px solid var(--olive)">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+    <span style="font-size:24px">🎬</span>
+    <span style="font-size:15px;font-weight:700">趋势二：代言人"长线维护期"策略——从爆发到渗透</span>
+    <span class="badge badge-red" style="margin-left:auto">高关注</span>
+  </div>
+  <div class="detail-line">MO&Co.张曼玉代言从"官宣爆发"进入"日常维护"，内容从时装短片转向日常松弛场景的持续输出；broadcast播利用倪妮剧集《隐身的名字》热度实现流量二次发酵，且采用"场景同款"形式而非硬广植入——两个品牌共同验证：代言人价值需要3-5年长线运营，且内容形式越贴近日常越有效。</div>
+  <div class="detail-line" style="margin-top:6px"><b>关联品牌：</b>MO&Co.（张曼玉长线） · broadcast播（倪妮剧集借势） · SANI（品牌大使策略规划参照）</div>
+</div>
+
+<div class="card" style="border-left:3px solid var(--olive)">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+    <span style="font-size:24px">🗺️</span>
+    <span style="font-size:15px;font-weight:700">趋势三：城市快闪从一线向新一线/东北市场扩张</span>
+    <span class="badge badge-blue" style="margin-left:auto">新信号</span>
+  </div>
+  <div class="detail-line">JNBY「游牧新章」快闪从成都（2025春夏）落地沈阳（2026春夏），证明品牌体验活动的全国化路径已从"一线展示"延伸至东北市场；东北/华北新一线城市的中高端女性消费力被越来越多设计师品牌重视，快闪是低成本测试新城市客群的高效方式。</div>
+  <div class="detail-line" style="margin-top:6px"><b>关联品牌：</b>JNBY（成都→沈阳） · SANI（华南向全国扩张策略高度相关）</div>
+</div>
+
+<div class="card" style="border-left:3px solid var(--olive)">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+    <span style="font-size:24px">👟</span>
+    <span style="font-size:15px;font-weight:700">趋势四：时尚×运动跨界加速——高端品牌全面运动化</span>
+    <span class="badge badge-blue" style="margin-left:auto">持续</span>
+  </div>
+  <div class="detail-line">Loewe × On Running SS26联名落地，9款配色当日多款售罄；回顾Loewe FW26注塑成型Storm靴——奢侈时装与功能性运动的融合已从概念落实为常态化产品策略。"高端设计美学+运动性能"的双重叙事正在成为新一代消费者的购买决策核心要素。</div>
+  <div class="detail-line" style="margin-top:6px"><b>关联品牌：</b>Loewe（直接样本） · SANI（City Walk/城市漫步场景产品延伸参照）</div>
+</div>
+
+<div class="card" style="border-left:3px solid var(--olive)">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+    <span style="font-size:24px">🏬</span>
+    <span style="font-size:15px;font-weight:700">趋势五：传统百货渠道加速退场 · Galeries Lafayette北京5月27日关闭</span>
+    <span class="badge badge-red" style="margin-left:auto">⚠️ 警示</span>
+  </div>
+  <div class="detail-line">老佛爷百货北京旗舰店宣布5月27日关闭，成为本月最重要的渠道信号之一，进一步印证传统百货在中国市场的结构性衰退。中高端女装品牌渠道重心正加速向品牌自营直营店/购物中心/线上三端转移，依赖传统百货铺货的品牌面临渠道迁移压力。</div>
+  <div class="detail-line" style="margin-top:6px"><b>关联品牌：</b>全部监测品牌（渠道策略均受影响） · SANI（如有百货渠道，建议评估迁移优先级）</div>
+</div>
+
+<div style="font-size:12px;color:var(--text3);margin-top:14px">
+  趋势验证参考：<a href="https://www.wallpaper.com/design-interiors/loewe-craft-prize-2026-winner-announcement" target="_blank">Wallpaper* · Loewe工艺奖2026</a> · 
+  <a href="https://jingdaily.com/" target="_blank">Jing Daily · 中国时尚市场动态</a> · 
+  <a href="https://luxe.co/" target="_blank">华丽志 · 国内女装市场追踪</a>
+</div>
+</div><!-- /tab1 -->
+
+<!-- ═══════════ TAB 2：对SANI设计启示 ═══════════ -->
+<div class="tab-content" id="tab2">
+<div style="font-size:13px;color:var(--text3);margin-bottom:18px">以下建议基于本周竞品动态提炼，供设计部及品牌部内部讨论参考</div>
+
+<div class="grid2">
+  <div class="card" style="position:relative">
+    <div class="insight-num">01</div>
+    <span class="badge badge-red">非遗战略</span>
+    <div style="font-size:15px;font-weight:700;margin:10px 0 8px">抢占"中国染织"在全球工艺话语中的席位</div>
+    <div class="detail-line">Loewe工艺奖2026将聚光灯投向东亚匠人，中国艺术家入围特别提名。SANI蓝靛染非遗在国内有产地优势，但缺乏国际话语构建。建议：①研究申报Loewe Foundation Craft Prize 2027（6月开放申报）；②主动联系华丽志/Jing Daily建立蓝靛染国际叙事内容；③锁定广东/广西/海南在地工艺独占资源，防止竞品进场。</div>
+  </div>
+  <div class="card" style="position:relative">
+    <div class="insight-num">02</div>
+    <span class="badge badge-red">代言内容</span>
+    <div style="font-size:15px;font-weight:700;margin:10px 0 8px">代言人媒体事件期=内容爆发触发点</div>
+    <div class="detail-line">broadcast播借倪妮《隐身的名字》热度输出场景穿搭内容，证明"代言人有作品上映/事件曝光时"是品牌内容联动的黄金触发节点。SANI在未来品牌大使合作框架中，应将"大使媒体事件期"纳入内容日历，提前备稿，以松绑式"场景同款"形式放大流量红利。</div>
+  </div>
+  <div class="card" style="position:relative">
+    <div class="insight-num">03</div>
+    <span class="badge badge-blue">全国化路径</span>
+    <div style="font-size:15px;font-weight:700;margin:10px 0 8px">城市快闪：从华南向全国的低成本触达策略</div>
+    <div class="detail-line">JNBY沈阳快闪为SANI提供可参照的全国化路径样本：购物中心核心点位+品牌主题叙事+明星到场=高性价比城市触达。建议SANI制定2026下半年快闪城市路线图，优先考虑成都/西安/沈阳/武汉等新一线城市，以"场景着装哲学"为主题，低成本测试新城市客群。</div>
+  </div>
+  <div class="card" style="position:relative">
+    <div class="insight-num">04</div>
+    <span class="badge badge-blue">内容策略</span>
+    <div style="font-size:15px;font-weight:700;margin:10px 0 8px">大秀/活动后的两级传播链路设计</div>
+    <div class="detail-line">玛丝菲尔「即兴节奏」入市后抖音/小红书种草完成热度承接，避免"活动结束热度断崖"。SANI若举办品牌活动，需提前规划后续社媒内容消化策略：第1周大秀话题→第2-4周产品细节种草→第5-8周用户穿搭UGC引导，形成完整传播闭环。</div>
+  </div>
+  <div class="card" style="position:relative">
+    <div class="insight-num">05</div>
+    <span class="badge badge-green">渠道警示</span>
+    <div style="font-size:15px;font-weight:700;margin:10px 0 8px">百货渠道退场风险：Galeries Lafayette北京关闭的启示</div>
+    <div class="detail-line">老佛爷百货北京旗舰店5月27日关闭是今年最重要渠道信号之一。SANI若有传统百货渠道布局，建议本季评估渠道迁移优先级：优先向购物中心自营直营店迁移，同步加码天猫+小红书线上双渠道，避免渠道依赖风险。</div>
+  </div>
+  <div class="card" style="position:relative">
+    <div class="insight-num">06</div>
+    <span class="badge badge-green">产品延伸</span>
+    <div style="font-size:15px;font-weight:700;margin:10px 0 8px">City Walk场景产品线：棉麻自然美学×城市轻运动的交集</div>
+    <div class="detail-line">Loewe×On Running在"高端时装+运动鞋"持续验证市场接受度。SANI棉麻自然美学与城市轻户外/散步文化存在明显交集——建议开发"城市漫步场景"专项产品线，对接日益增长的City Walk消费需求，可从配套鞋品/拎包/功能外套切入，与现有服装形成场景穿搭闭环。</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="card" style="border:1px solid var(--gold-border);background:var(--gold-bg)">
+  <div style="font-size:13px;font-weight:700;color:var(--olive);margin-bottom:10px">📌 下周追踪计划</div>
+  <div class="detail-line">1. 持续监测JNBY「游牧新章·散步时刻」沈阳快闪后续社媒数据，关注快闪模式是否继续向东北/华北其他城市延伸</div>
+  <div class="detail-line">2. 关注MO&Co.代言长线维护期的内容节奏，NOIR高端线夏季是否有国内新动作</div>
+  <div class="detail-line">3. Marisfrolg「即兴节奏」系列上架第三周终端动销，重点SKU（廓形层叠连衣裙¥4,500 / 飘片流苏外套¥3,800）实际售罄率追踪</div>
+  <div class="detail-line">4. broadcast播借倪妮《隐身的名字》热度的联动内容持续跟踪，关注品牌是否推出剧集专题同款活动</div>
+  <div class="detail-line">5. <b style="color:var(--terra)">⚠️ INSUN恩裳 + 达衣岩</b> 连续四周信息空白，本周必须安排线下巡店补充一手数据</div>
+  <div class="detail-line">6. 关注Galeries Lafayette北京旗舰店5月27日关闭后，驻场国内女装品牌的渠道迁移动向</div>
+  <div class="detail-line">7. Loewe Foundation Craft Prize展览（新加坡国家美术馆，至6月14日）：关注国内媒体对"中国工艺入围"的跟进报道，及其对SANI非遗国际化叙事的借鉴价值</div>
+</div>
+</div><!-- /tab2 -->
+
+<!-- ═══════════ TAB 3：当季主推款 · 价格带 ═══════════ -->
+<div class="tab-content" id="tab3">
+<div style="font-size:13px;color:var(--text3);margin-bottom:20px">各监测品牌2026春夏当季主推单品及价格带 · 图文对照 · 供设计选品参照</div>
+
+<!-- 国外灵感参考 -->
+<div class="section-header">国外灵感参考品牌</div>
+<div class="grid3-img">
+
+  <div class="img-card">
+    <img src="https://cdn.mos.cms.futurecdn.net/wpdstzunXzLGpKNoWas6Ca-2560-80.jpg" class="ic-img" alt="Loewe 2026" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="ic-ph" style="display:none"><div class="ic-ph-letter">Loewe</div></div>
+    <div class="ic-body">
+      <div class="ic-head"><span class="ic-brand">🇪🇸 Loewe</span><span class="ic-price">¥3,000+</span></div>
+      <div class="ic-item"><span class="ic-item-name">FW26充气廓形外套</span><span class="ic-item-price">¥6,800+</span></div>
+      <div class="ic-item"><span class="ic-item-name">皮革拼接连衣裙</span><span class="ic-item-price">¥5,500+</span></div>
+      <div class="ic-item"><span class="ic-item-name">Amazona 180周年包</span><span class="ic-item-price">¥4,200+</span></div>
+      <div class="ic-item"><span class="ic-item-name">×On Running SS26联名</span><span class="ic-item-price">¥3,500+</span></div>
+      <div class="ic-note highlight">★ 5.12工艺奖颁奖·中国艺术家入围 · 5.14联名售罄</div>
+    </div>
+  </div>
+
+  <div class="img-card">
+    <img src="https://graziamagazine.com/wp-content/uploads/2025/09/max-mara-ss26.jpg" class="ic-img" alt="Max Mara SS26" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="ic-ph" style="display:none"><div class="ic-ph-letter">MM</div></div>
+    <div class="ic-body">
+      <div class="ic-head"><span class="ic-brand">🇮🇹 Max Mara</span><span class="ic-price">¥3,000+</span></div>
+      <div class="ic-item"><span class="ic-item-name">H廓形精纺外套</span><span class="ic-item-price">¥5,200+</span></div>
+      <div class="ic-item"><span class="ic-item-name">驼色通勤连衣裙</span><span class="ic-item-price">¥3,800+</span></div>
+      <div class="ic-item"><span class="ic-item-name">宽松棉麻长裤</span><span class="ic-item-price">¥2,800+</span></div>
+      <div class="ic-note">廓形标准参考 · 通勤女装定位基准 · SS26灵感Rococo洛可可</div>
+    </div>
+  </div>
+
+  <div class="img-card">
+    <div class="ic-ph" style="background:#EEF0E8"><div class="ic-ph-letter" style="color:#6B7850;font-size:14px;letter-spacing:3px">LEMAIRE</div><div class="ic-ph-name">极简设计师参照</div></div>
+    <div class="ic-body">
+      <div class="ic-head"><span class="ic-brand">🇫🇷 Lemaire</span><span class="ic-price">¥3,000+</span></div>
+      <div class="ic-item"><span class="ic-item-name">极简宽松风衣</span><span class="ic-item-price">¥4,500+</span></div>
+      <div class="ic-item"><span class="ic-item-name">轻薄棉质套装</span><span class="ic-item-price">¥3,200+</span></div>
+      <div class="ic-item"><span class="ic-item-name">宽松吊带连衣裙</span><span class="ic-item-price">¥2,800+</span></div>
+      <div class="ic-note">极简设计师路径参照 · SS26主题"直觉着装"· 版型逻辑参考</div>
+    </div>
+  </div>
+
+  <div class="img-card">
+    <div class="ic-ph" style="background:#F0EAF5"><div class="ic-ph-letter" style="color:#7A6090;font-size:14px;letter-spacing:2px">Soeur</div><div class="ic-ph-name">法式轻文艺参照</div></div>
+    <div class="ic-body">
+      <div class="ic-head"><span class="ic-brand">🇫🇷 Soeur</span><span class="ic-price">¥1,500-3,000</span></div>
+      <div class="ic-item"><span class="ic-item-name">碎花泡泡袖连衣裙</span><span class="ic-item-price">¥1,800</span></div>
+      <div class="ic-item"><span class="ic-item-name">宽松亚麻衬衫</span><span class="ic-item-price">¥1,200</span></div>
+      <div class="ic-item"><span class="ic-item-name">针织短外套</span><span class="ic-item-price">¥2,200</span></div>
+      <div class="ic-note">法式轻文艺参照 · 国内认知度快速提升中</div>
+    </div>
+  </div>
+
+  <div class="img-card">
+    <div class="ic-ph" style="background:#EFEFEF"><div class="ic-ph-letter" style="color:#505050;font-size:14px;letter-spacing:2px">Enfold</div><div class="ic-ph-name">廓形完成度参照</div></div>
+    <div class="ic-body">
+      <div class="ic-head"><span class="ic-brand">🇯🇵 Enfold</span><span class="ic-price">¥2,000-4,000</span></div>
+      <div class="ic-item"><span class="ic-item-name">宽肩廓形外套</span><span class="ic-item-price">¥3,800</span></div>
+      <div class="ic-item"><span class="ic-item-name">精纺裤装套装</span><span class="ic-item-price">¥2,600</span></div>
+      <div class="ic-item"><span class="ic-item-name">精确版型半裙</span><span class="ic-item-price">¥2,200</span></div>
+      <div class="ic-note">廓形完成度参照 · 版型研发重要参考</div>
+    </div>
+  </div>
+
+  <div class="img-card">
+    <div class="ic-ph" style="background:#E8EEF5"><div class="ic-ph-letter" style="color:#4A6080;font-size:13px;letter-spacing:1px">UN3D.</div><div class="ic-ph-name">年轻设计前沿参考</div></div>
+    <div class="ic-body">
+      <div class="ic-head"><span class="ic-brand">🇯🇵 UN3D.</span><span class="ic-price">¥1,000-3,000</span></div>
+      <div class="ic-item"><span class="ic-item-name">不对称剪裁连衣裙</span><span class="ic-item-price">¥1,800</span></div>
+      <div class="ic-item"><span class="ic-item-name">荷叶边透明感上衣</span><span class="ic-item-price">¥1,200</span></div>
+      <div class="ic-item"><span class="ic-item-name">解构感西装外套</span><span class="ic-item-price">¥2,500</span></div>
+      <div class="ic-note">年轻设计师品牌前沿参考 · 实现低成本高设计感</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- 国内一线 -->
+<div class="section-header" style="margin-top:28px">国内一线女装</div>
+<div class="grid3-img">
+
+  <div class="img-card">
+    <img src="https://hips.hearstchina.com/hmg-prod/images/51cd5ce7-e1e7-4375-b445-a1206f8291c1.jpg" class="ic-img" alt="JNBY 2026春夏凝视" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="ic-ph" style="display:none;background:#EAF0EA"><div class="ic-ph-letter" style="color:#3A5A42">JNBY</div></div>
+    <div class="ic-body">
+      <div class="ic-head"><span class="ic-brand">JNBY 江南布衣</span><span class="ic-price">¥1,000-3,000</span></div>
+      <div class="ic-item"><span class="ic-item-name">「品质之选」精纺面料套装</span><span class="ic-item-price">¥2,800</span></div>
+      <div class="ic-item"><span class="ic-item-name">花卉印花连衣裙</span><span class="ic-item-price">¥2,200</span></div>
+      <div class="ic-item"><span class="ic-item-name">工艺流苏针织外套</span><span class="ic-item-price">¥1,800</span></div>
+      <div class="ic-item"><span class="ic-item-name">天丝牛仔A型半裙</span><span class="ic-item-price">¥998</span></div>
+      <div class="ic-note highlight">★ 2026春夏「凝视」系列 · 李心洁沈阳快闪演绎</div>
+    </div>
+  </div>
+
+  <div class="img-card">
+    <img src="https://www.cosmopolitancn.com/media/images/20251223/20251223491442433938.lite.png" class="ic-img" alt="MO&Co. 张曼玉" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="ic-ph" style="display:none;background:#F0EEF8"><div class="ic-ph-letter" style="color:#5A4888">MO&Co</div></div>
+    <div class="ic-body">
+      <div class="ic-head"><span class="ic-brand">MO&amp;Co. 摩安珂</span><span class="ic-price">¥800-2,000</span></div>
+      <div class="ic-item"><span class="ic-item-name">张曼玉同款宽松亚麻衬衫</span><span class="ic-item-price">¥1,299</span></div>
+      <div class="ic-item"><span class="ic-item-name">慵懒廓形休闲外套</span><span class="ic-item-price">¥1,800</span></div>
+      <div class="ic-item"><span class="ic-item-name">高腰阔腿休闲裤</span><span class="ic-item-price">¥890</span></div>
+      <div class="ic-item"><span class="ic-item-name">Moomin联名托特包</span><span class="ic-item-price">¥699</span></div>
+      <div class="ic-note highlight">★ 张曼玉全球代言 · 代言进入长线深耕期</div>
+    </div>
+  </div>
+
+  <div class="img-card">
+    <img src="http://objectmc2026.oss-cn-shenzhen.aliyuncs.com/yhdoc/202604/21/202604211417301711138507.jpeg" class="ic-img" alt="Marisfrolg即兴节奏" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="ic-ph" style="display:none;background:#F4EDE6"><div class="ic-ph-letter" style="color:#7A5030">玛丝菲尔</div></div>
+    <div class="ic-body">
+      <div class="ic-head"><span class="ic-brand">Marisfrolg 玛丝菲尔</span><span class="ic-price">¥2,000-5,000</span></div>
+      <div class="ic-item"><span class="ic-item-name">「即兴节奏」廓形层叠连衣裙</span><span class="ic-item-price">¥4,500</span></div>
+      <div class="ic-item"><span class="ic-item-name">飘片流苏律动外套</span><span class="ic-item-price">¥3,800</span></div>
+      <div class="ic-item"><span class="ic-item-name">呼吸空间棉麻套装</span><span class="ic-item-price">¥3,200</span></div>
+      <div class="ic-item"><span class="ic-item-name">趣味挂球细节衬衫</span><span class="ic-item-price">¥2,800</span></div>
+      <div class="ic-note highlight">★ 4.18上海发布秀·高叶私服效应持续发酵</div>
+    </div>
+  </div>
+
+  <div class="img-card">
+    <div class="ic-ph" style="background:#EFEFEF"><div class="ic-ph-letter" style="color:#505050;font-size:14px;letter-spacing:2px">AUM</div><div class="ic-ph-name">极简通勤</div></div>
+    <div class="ic-body">
+      <div class="ic-head"><span class="ic-brand">AUM</span><span class="ic-price">¥1,000-2,000</span></div>
+      <div class="ic-item"><span class="ic-item-name">极简廓形棉质外套</span><span class="ic-item-price">¥1,800</span></div>
+      <div class="ic-item"><span class="ic-item-name">精确版型通勤裤装</span><span class="ic-item-price">¥1,200</span></div>
+      <div class="ic-item"><span class="ic-item-name">无结构感棉麻套装</span><span class="ic-item-price">¥1,600</span></div>
+      <div class="ic-note">极简通勤主力 · 天猫动销稳定</div>
+    </div>
+  </div>
+
+  <div class="img-card">
+    <div class="ic-ph" style="background:#E8EEF5"><div class="ic-ph-letter" style="color:#3A5A7A;font-size:14px;letter-spacing:1px">Joc</div><div class="ic-ph-name">极简高质感</div></div>
+    <div class="ic-body">
+      <div class="ic-head"><span class="ic-brand">Joc</span><span class="ic-price">¥1,000-4,000</span></div>
+      <div class="ic-item"><span class="ic-item-name">高质感极简连衣裙</span><span class="ic-item-price">¥2,800</span></div>
+      <div class="ic-item"><span class="ic-item-name">精纺羊毛廓形外套</span><span class="ic-item-price">¥3,600</span></div>
+      <div class="ic-item"><span class="ic-item-name">极简线条通勤套装</span><span class="ic-item-price">¥2,200</span></div>
+      <div class="ic-note">极简主义/高质感 · 与SANI客群价格带交叠 · 重点关注</div>
+    </div>
+  </div>
+
+  <div class="img-card">
+    <div class="ic-ph" style="background:#F4EDE6"><div class="ic-ph-letter" style="color:#7A5030;font-size:12px;letter-spacing:1px">Edition</div><div class="ic-ph-name">轻奢定位</div></div>
+    <div class="ic-body">
+      <div class="ic-head"><span class="ic-brand">Edition</span><span class="ic-price">¥2,000-4,000</span></div>
+      <div class="ic-item"><span class="ic-item-name">轻奢通勤连衣裙</span><span class="ic-item-price">¥3,200</span></div>
+      <div class="ic-item"><span class="ic-item-name">精致西装套装</span><span class="ic-item-price">¥4,500</span></div>
+      <div class="ic-item"><span class="ic-item-name">丝绒拼接半裙</span><span class="ic-item-price">¥2,600</span></div>
+      <div class="ic-note">MO&Co.高端线 · 借张曼玉代言热度联动中</div>
+    </div>
+  </div>
+
+  <div class="img-card">
+    <div class="ic-ph" style="background:#EEF0F5"><div class="ic-ph-letter" style="color:#4A5070;font-size:12px;letter-spacing:1px">INSUN</div><div class="ic-ph-name">成熟通勤</div></div>
+    <div class="ic-body">
+      <div class="ic-head"><span class="ic-brand">INSUN 恩裳</span><span class="ic-price">¥1,000-3,000</span></div>
+      <div class="ic-item"><span class="ic-item-name">通勤风真丝衬衫</span><span class="ic-item-price">¥1,600</span></div>
+      <div class="ic-item"><span class="ic-item-name">精致西装外套</span><span class="ic-item-price">¥2,800</span></div>
+      <div class="ic-item"><span class="ic-item-name">优雅半裙套装</span><span class="ic-item-price">¥2,200</span></div>
+      <div class="ic-note alert">⚠️ 连续四周公开信息极少 · 待线下巡店补充</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- 国内二线 + 线上 -->
+<div class="section-header" style="margin-top:28px">国内二线 / 线上品牌</div>
+<div class="grid3-img">
+
+  <div class="img-card">
+    <div class="ic-ph" style="background:#E6EEF5"><div class="ic-ph-letter" style="color:#3A5A7A;font-size:16px">播</div><div class="ic-ph-name">broadcast · 风辞典</div></div>
+    <div class="ic-body">
+      <div class="ic-head"><span class="ic-brand">broadcast 播</span><span class="ic-price">¥800-2,000</span></div>
+      <div class="ic-item"><span class="ic-item-name">「风辞典」倪妮同款衬衫</span><span class="ic-item-price">¥1,200</span></div>
+      <div class="ic-item"><span class="ic-item-name">马尾绣「东方之礼」连衣裙</span><span class="ic-item-price">¥1,600</span></div>
+      <div class="ic-item"><span class="ic-item-name">Enikő Eged联名马年限定</span><span class="ic-item-price">¥1,400</span></div>
+      <div class="ic-note highlight">★ 倪妮《隐身的名字》热播 · 品牌媒体价值二次发酵</div>
+    </div>
+  </div>
+
+  <div class="img-card">
+    <div class="ic-ph" style="background:#F5EDE0"><div class="ic-ph-letter" style="color:#8B5E2A;font-size:13px">达衣岩</div><div class="ic-ph-name">民族工艺</div></div>
+    <div class="ic-body">
+      <div class="ic-head"><span class="ic-brand">达衣岩</span><span class="ic-price">¥800-2,000</span></div>
+      <div class="ic-item"><span class="ic-item-name">绘画印花半裙</span><span class="ic-item-price">¥1,400</span></div>
+      <div class="ic-item"><span class="ic-item-name">民族风棉麻长裙</span><span class="ic-item-price">¥1,200</span></div>
+      <div class="ic-item"><span class="ic-item-name">艺术印花宽松外套</span><span class="ic-item-price">¥1,800</span></div>
+      <div class="ic-note alert">⚠️ 连续四周公开信息极少 · 待线下巡店 · 云南非遗资源落地情况待确认</div>
+    </div>
+  </div>
+
+  <div class="img-card">
+    <div class="ic-ph" style="background:#E8F0F0"><div class="ic-ph-letter" style="color:#3A6060;font-size:12px">水云间</div><div class="ic-ph-name">五大场景策略</div></div>
+    <div class="ic-body">
+      <div class="ic-head"><span class="ic-brand">水云间</span><span class="ic-price">¥500-1,500</span></div>
+      <div class="ic-item"><span class="ic-item-name">职场场景通勤套装</span><span class="ic-item-price">¥1,200</span></div>
+      <div class="ic-item"><span class="ic-item-name">商旅多功能外套</span><span class="ic-item-price">¥980</span></div>
+      <div class="ic-item"><span class="ic-item-name">日常周末棉麻裙</span><span class="ic-item-price">¥680</span></div>
+      <div class="ic-note">五大场景策略对标 · SANI 52周日历策略直接竞品</div>
+    </div>
+  </div>
+
+  <div class="img-card">
+    <div class="ic-ph" style="background:#EAF2EC"><div class="ic-ph-letter" style="color:#3A6048;font-size:13px">开间</div><div class="ic-ph-name">极简线上</div></div>
+    <div class="ic-body">
+      <div class="ic-head"><span class="ic-brand">开间</span><span class="ic-price">¥300-800</span></div>
+      <div class="ic-item"><span class="ic-item-name">极简棉质宽松衬衫</span><span class="ic-item-price">¥368</span></div>
+      <div class="ic-item"><span class="ic-item-name">基础款棉麻阔腿裤</span><span class="ic-item-price">¥298</span></div>
+      <div class="ic-item"><span class="ic-item-name">简约连衣裙</span><span class="ic-item-price">¥488</span></div>
+      <div class="ic-note">线上极简 · 价格竞争力强 · 夏季上新加快</div>
+    </div>
+  </div>
+
+  <div class="img-card">
+    <div class="ic-ph" style="background:#EEE8F5"><div class="ic-ph-letter" style="color:#6A4888;font-size:13px">知之</div><div class="ic-ph-name">文艺内容驱动</div></div>
+    <div class="ic-body">
+      <div class="ic-head"><span class="ic-brand">知之</span><span class="ic-price">¥300-800</span></div>
+      <div class="ic-item"><span class="ic-item-name">文艺风棉麻连衣裙</span><span class="ic-item-price">¥428</span></div>
+      <div class="ic-item"><span class="ic-item-name">宽松棉质衬衫套装</span><span class="ic-item-price">¥368</span></div>
+      <div class="ic-item"><span class="ic-item-name">内容驱动短裙</span><span class="ic-item-price">¥298</span></div>
+      <div class="ic-note">内容驱动型 · 情绪共鸣优先策略 · SANI小红书参照样本</div>
+    </div>
+  </div>
+
+</div>
+
+<div style="font-size:11px;color:var(--text3);text-align:center;margin-top:20px;padding-top:14px;border-top:0.5px solid var(--border-light)">
+  * SANI撒尼（我方）定位：自然松弛 · 生活方式 | ¥500-2,600 | 华南起家向全国扩张 | 场景着装 + 高复购率40-50%<br>
+  图片来源：各品牌官方媒体/时尚媒体公开报道 · 价格数据来源：各品牌官网 / 天猫旗舰店 · 仅供参考，以实时售价为准
+</div>
+</div><!-- /tab3 -->
+
+</div><!-- wrap -->
+
+<!-- FOOTER -->
+<div class="wrap">
+  <div style="height:1px;background:linear-gradient(90deg,rgba(92,97,72,0.2),transparent);margin-top:40px"></div>
+  <div class="footer-note">
+    SANI撒尼 · 总经办竞品研究 · 数据来源：品牌官方渠道 / ELLE中国 / Vogue中国 / Harper's Bazaar中国 / 华丽志 / Jing Daily / SocialBeta / Business of Fashion / NOWRE / 时尚COSMO / WWD / Who What Wear / LVMH / 品牌官方小红书及社交媒体<br>
+    仅供内部参考，请勿外传 · 报告生成时间 2026.05.18
+  </div>
+</div>
+
+<script>
+
+function filterBrands(tier){
+  document.querySelectorAll('.filter-btn').forEach(b=>{b.classList.toggle('active', b.dataset.filter===tier)});
+  document.querySelectorAll('.brand-card').forEach(c=>{
+    c.classList.toggle('hidden', tier!=='all' && c.dataset.tier!==tier);
+  });
+  document.querySelectorAll('.tier-divider').forEach(d=>{
+    if(tier==='all'){d.style.display='';return;}
+    d.style.display = d.dataset.tierSection===tier ? '' : 'none';
+  });
+}
+
+function switchTab(idx){
+  document.querySelectorAll('.tab-btn').forEach((b,i)=>{b.classList.toggle('active',i===idx)});
+  document.querySelectorAll('.tab-content').forEach(c=>{c.classList.remove('active')});
+  document.getElementById('tab'+idx).classList.add('active');
+}
+</script>
+</body>
+</html>
